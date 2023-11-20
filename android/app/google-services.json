@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "349199270045",
+    "project_id": "gdsc-chat-app-64ad1",
+    "storage_bucket": "gdsc-chat-app-64ad1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349199270045:android:31f248317d800dc837d474",
+        "android_client_info": {
+          "package_name": "com.example.flutter_fire_chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5nAuEyS20E6dPGjNWqOV5iqCRC7lIuxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
