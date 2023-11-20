@@ -16,45 +16,17 @@ class _ChatsScreenState extends State<ChatsScreen> {
   final TextEditingController _messageCtrl = TextEditingController();
 
   Future<void> _onSignOut() async {
-    await _repo.signOut();
-
-    // ignore: use_build_context_synchronously
-    Navigator.pushNamed(context, '/login');
+    // TODO (9): Implement sign out.
   }
 
   void _onSend() {
-    _repo.sendMessage(_messageCtrl.text.trim());
-    _messageCtrl.clear();
+    // TODO (10): Implement sending of message.
   }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutterfire Chats'),
-        actions: [
-          IconButton(
-            onPressed: _onSignOut,
-            icon: const Icon(
-              Icons.exit_to_app,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            ChatsListing(repository: _repo),
-            const Divider(color: Colors.grey),
-            ChatTextField(
-              controller: _messageCtrl,
-              onSend: _onSend,
-            ),
-          ],
-        ),
-      ),
+    //TODO (11): Design your chats screen.
+    return const Scaffold(
+      body: Center(child: Placeholder()),
     );
   }
 }

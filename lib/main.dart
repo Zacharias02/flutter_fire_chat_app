@@ -1,15 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_fire_chat_app/helpers/firebase_service.dart';
-import 'package:flutter_fire_chat_app/screens/chat_screen.dart';
-import 'package:flutter_fire_chat_app/screens/login_screen.dart';
-import 'package:flutter_fire_chat_app/screens/registration_screen.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await FirebaseService.init();
-
+  //TODO (1): Initialize Firebase
   runApp(const MyApp());
 }
 
@@ -38,13 +30,8 @@ class MyApp extends StatelessWidget {
           circularTrackColor: Colors.yellow,
         ),
       ),
-      initialRoute:
-          FirebaseAuth.instance.currentUser != null ? '/chats' : '/login',
-      routes: {
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegistrationScreen(),
-        '/chats': (context) => const ChatsScreen(),
-      },
+      //TODO (2): Remove home and add routes your initial route.
+      home: const Scaffold(body: Placeholder()),
     );
   }
 }
