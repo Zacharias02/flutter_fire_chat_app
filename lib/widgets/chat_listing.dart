@@ -52,10 +52,10 @@ class ChatsListing extends StatelessWidget {
                   },
                 );
               } else {
-                return const Center(
+                return Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.message,
                         size: 80,
