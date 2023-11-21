@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class ChatItemTile extends StatelessWidget {
   const ChatItemTile({
@@ -41,12 +40,15 @@ class ChatItemTile extends StatelessWidget {
                 : const SizedBox.shrink(),
             if (forReceiver) const SizedBox(width: 15.0),
             Container(
+              constraints: const BoxConstraints(maxWidth: 300),
               padding: const EdgeInsets.symmetric(
                 horizontal: 15.0,
                 vertical: 10.0,
               ),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.blue),
+                border: Border.all(
+                  color: forReceiver ? Colors.grey : Colors.blue,
+                ),
                 borderRadius: BorderRadius.circular(25.0),
               ),
               child: Column(
@@ -62,25 +64,10 @@ class ChatItemTile extends StatelessWidget {
                       ),
                     ),
                   if (forReceiver) const SizedBox(height: 8.0),
-                  Row(
-                    children: [
-                      SelectableText(
-                        message!,
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                      const SizedBox(width: 10),
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        child: Text(
-                          DateFormat('MMMM dd, yyyy - hh:mm a')
-                              .format(createdAt),
-                          style: const TextStyle(
-                            fontStyle: FontStyle.italic,
-                            fontSize: 10,
-                          ),
-                        ),
-                      ),
-                    ],
+                  SelectableText(
+                    message!,
+                    style: const TextStyle(
+                        fontSize: 16, overflow: TextOverflow.ellipsis),
                   ),
                 ],
               ),
